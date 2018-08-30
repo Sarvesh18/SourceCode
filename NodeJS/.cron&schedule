@@ -1,0 +1,44 @@
+┌────────────── 0-59 second (optional)
+│ ┌──────────── 0-59 minute
+│ │ ┌────────── 0-23 hour
+│ │ │ ┌──────── 1-31 day of month
+│ │ │ │ ┌────── 1-12 or names month
+│ │ │ │ │ ┌──── 0-7 or names day of week
+│ │ │ │ │ │
+│ │ │ │ │ │
+* * * * * * 
+var cron = require('node-cron');
+ 
+var task = cron.schedule('* * * * *', function() {
+  console.log('');
+}, false);
+task.start();
+ 
+task.stop();
+
+task.destroy();
+
+
+var schedule = require('node-schedule');
+ 
+var task = schedule.scheduleJob('* * * * *', function(){
+  console.log('');
+});
+
+var date = new Date(2018, 11, 21, 5, 30, 0);
+var task = schedule.scheduleJob(date, function(){
+  console.log('');
+});
+
+var rule = new schedule.RecurrenceRule();
+rule.minute = 42; 
+var task = schedule.scheduleJob(rule, function(){
+  console.log('');
+});
+
+
+var task = schedule.scheduleJob({hour: 14, minute: 30, dayOfWeek: 0}, function(){
+  console.log('');
+});
+
+task.cancel();

@@ -1,0 +1,42 @@
+{
+  "name": "testdrivendevelopmentapp",
+  "version": "1.0.0",
+  "description": "Test Driven Development",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "start": "webpack",
+    "build": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarvesh18/SourceCode/ReactJS.git"
+  },
+  "author": "sarvesh18",
+  "license": "MIT",
+  "homepage": "https://github.com/Sarvesh18/SourceCode/ReactJS.git#readme",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.4.1",
+    "jest-enzyme": "^6.0.2",
+    "mini-css-extract-plugin": "^0.4.1",
+    "react-test-renderer": "^16.4.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
