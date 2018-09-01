@@ -1,0 +1,319 @@
+STL
+---
+***********************************************************************************************************************************************************************
+Standard Template Library
+************************************************************************************
+
+Algo: to how it is manipulated.
+
+
+
+
+array
+access 0(1);
+insert O(n);
+remove o(n); 
+add 0(n);
+dynamic list is not efficient
+as memory loss
+contig o s block of memory
+//Algorithms
+//Iterators
+********************************************************************************
+Container : Stored data is organised in memory
+e.g. stacks, linked lists, array
+
+-sequence SEQUENTIAL e.g. vector, list & deque
+//array:awkward or slow, specify size at compile time
+//(QUICK RANDOM ACCESS)either waste space in memory or running out of space 
+//sol vector
+
+//insert time-consuming
+//sol list(SLOW RANDOM ACCESS)Doubly lINKEDlIST
+
+//deque Double-Ended QUEue 
+//derived stack(lifo), queue(fifo), priority queue
+#In a priority queue, you push data in the
+front in random order, but when you pop the data off the other end, you always pop the largest
+item stored: the priority queue automatically sorts the data for you.
+#
+vector<int> aVect; //create a vector of ints
+or
+list<airtime> departure_list; //create a list of airtimes
+
+-associative KEY e.g. set(key object), multiset(multiple keys), map(key object,value object), multimap
+//TREE FAST SEARCHING , INSERTION , DELETION
+//X SORT , RANDOM ACCESS
+set<int> intSet; //create a set of ints
+or
+multiset<employee> machinists; //create a multiset of employees
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Member Functions
+
+Name     Purpose
+size() Returns the number of items in the container
+empty() Returns true if container is empty
+max_size() Returns size of the largest possible container
+begin() Returns an iterator to the start of the container, for iterating forwards through the container
+end() Returns an iterator to the past-the-end location in the container, used to end forward iteration
+rbegin() Returns a reverse iterator to the end of the container, for iterating backward through the container
+rend() Returns a reverse iterator to the beginning of the container; used to end backward iteration
+
+Container Adapters
+stack< deque<int> > aStak;
+
+stack<deque<int>> astak; //syntax error
+because the compiler will interpret the >> as an operator.
+
+Algorithms:procedures
+Algorithm Purpose
+#include <algorithm>
+
+int *ptr=find(arr, arr+n, X);//ptr-arr & first element is number 0. 
+Returns first element equivalent to a specified value
+
+int = count(arr,arr+n,X) 
+Counts the number of elements that have a specified value
+
+equal Compares the contents of two containers and returns true if all corresponding elements are equal
+
+int *ptr=search(arr1,arr+n1,arr2,arr2+n2); 
+//Arguments dont need to be the same type of container
+
+if(ptr == source+9) //if past-the-end
+cout << “No\n”;
+else
+cout << “ “ << (ptr - source) << endl;
+
+Looks for a sequence of values in one container that corresponds with
+the same sequence in another container
+
+copy Copies a sequence of values from one container to another (or to a
+different location in the same container)
+
+swap Exchanges a value in one location with a value in another
+
+iter_swap Exchanges a sequence of values in one location with a sequence of
+values in another location
+
+fill Copies a value into a sequence of locations
+
+sort(arr, arr+n); 
+//ascending
+Sorts the values in a container according to a specified ordering
+
+merge Combines two sorted ranges of elements to make a larger sorted range
+
+accumulate Returns the sum of the elements in a given range
+
+for_each Executes a specified function for each element in the container
+
+merge(src1,src1+s1,src2,src2+s2,destinationMatrix)
+
+Iterators:generalization of pointers 
+increment ++ operator
+dereference * operator
+
+can be stored
+-forward iterator ++
+-bidirectional iterator ++ --
+-random access iterator ++ -- jump
+cannot be
+-input iterator
+-output iterator
+
+***********************************************
+Algorithms
+#include <algorithm>
+
+int* ptr=find(arr,arr+n,element);
+cout<<(ptr-arr);//Index 0 finds all elements equal to a specified value.
+
+int c=count(arr,arr+n,element);
+cout<<c;
+
+sort(arr,arr+n);//ascending order
+
+int* ptr = search(source, source+9, pattern, pattern+3);
+if(ptr == source+9)
+cout << "No match found\n";
+else
+cout << "Match at " << (ptr - source) << endl;
+
+merge(src1, src1+5, src2, src2+3, dest);
+
+#include <functional>//Function Objects
+sort( fdata, fdata+6, greater<DataType>() );//descending
+
+#include <string.h>
+char* names[] = { "", "", "", "", "", "" };
+bool alpha_comp(char*, char*);
+//
+sort(names, names+6, alpha_comp);//Sort String     user-written ()
+sort(names, names+6, less<char*>() );//
+//
+bool alpha_comp(char* s1, char* s2) //returns true if s1<s2
+{
+return ( strcmp(s1, s2)<0 ) ? true : false;
+}
+
+#include <string.h>
+string names[] = { "George", "Estelle", "Don", "Mike", "Bob" };
+bool isDon(string name) 
+{
+return name == "";
+}
+string* ptr = find_if( names, names+5, isDon );
+if(ptr==names+5)
+cout << “Don is not on the list.\n”;
+else
+cout << “Don is element “<< (ptr-names)<< “ on the list.\n”;
+If isDon() returns true for any element, then find_if() returns the value of that element’s
+pointer (iterator). Otherwise, it returns a pointer to the past-the-end address of the array.
+
+count(), replace(), and remove(), have _if versions.
+
+void in_to_cm();
+for_each(inches, inches+5, in_to_cm);//Your function can’t change the elements
+in the container, but it can use or display their values.
+
+double in_to_cm(double); //prototype
+transform(inches, inches+5, centi, in_to_cm);//The transform() algorithm does something to every item in a container, and places the resulting
+values in a different container (or the same one).
+
+Sequence Containers
+Vectors
+-manage storage allocation:expanding and contracting
+-random access is very fast
+-It’s also fast to add (or push) a new data item
+#include <vector>
+vector<int> v;
+v.push_back(element);//Back of vector
+v[]=;
+n=v.size();//returns the number of elements currently in the container
+*
+max_size()//returns the maximum size to which a container can be expanded.
+*
+double arr[] = { 1.1, 2.2, 3.3, 4.4 };
+vector<double> v1(arr, arr+4); //initialize vector to array
+vector<double> v2(4);//initialize 0 by default
+v1.swap(v2);
+for( ;!v2.empty();v2.pop_back(); ) //until vector is empty,
+//while(!v2.empty()){ //v2.pop_back();}
+{
+cout << v2.back() << ' ';//returns the value of the last element in the vector.
+}
+
+v.insert( v.begin()+2, 115);
+v.erase( v.begin()+2 ); 
+for(int j=0; j<v.size(); j++) //display all elements
+cout << v[j] << ' ';
+
+
+#include <list>
+Lists:doubly linked list
+random access not
+appropriate when you will make frequent insertions and deletions in the middle
+list<int> ilist;
+ilist.push_back(30); //push items on back
+ilist.push_front(20); //push items on front
+
+int size = ilist.size(); //number of items
+for(int j=0; j<size; j++)
+{
+cout << ilist.front() << ' '; //read item from front
+ilist.pop_front(); //pop item off front
+}
+while( !list1.empty() )
+{
+cout << list1.front() << ' '; //read item from front
+list1.pop_front(); //pop item off front
+}
+
+insert erase
+//
+
+list<int> list1, list2;
+for(j=0; j<4; j++)
+list1.push_back( arr1[j] );
+list1.reverse(); //reverse list1: 10 20 30 40
+list1.merge(list2); //merge list2 into list1
+list1.unique(); //remove duplicate 20 and 30
+
+
+///////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+# sequence similar to array compile except waste space or running out of space
+vector list deque
+//stack queue priority queue
+vector<int> var;
+list<air-time> departure_list;
+
+
+# associative
+dicyionary-key
+set map//tree
+set<int> intSet;
+multiset<employee> machinists
+multiset  multimap
+
+TABLE 15.4 Adapter-Based Containers
+Container Implementation Characteristics
+stack Can be implemented Insert (push) and remove (pop)
+as vector, list, or at one end only
+deque
+queue Can be implemented Insert (push) at one end,
+as list or deque remove (pop) at other
+priority queue Can be implemented Insert (push) in random order
+as vector or deque at one end, remove (pop) in
+sorted order from other end
+
+size() Returns the number of items in the container
+empty() Returns true if container is empty
+max_size() Returns size of the largest possible container
+begin() Returns an iterator to the start of the container, for iterating forwards through the container
+end() Returns an iterator to the past-the-end location in the container, used to end forward iteration
+rbegin() Returns a reverse iterator to the end of the container, for iterating backward through the container
+rend() Returns a reverse iterator to the beginning of the container; used to end backward iteration
+stack<deque<int> > astak;
+//Syntax error interpret >> as an operator
+algo 
+find Returns first element equivalent to a specified value
+count Counts the number of elements that have a specified value
+equal Compares the contents of two containers and returns true if all corresponding
+elements are equal
+search Looks for a sequence of values in one container that corresponds with
+the same sequence in another container
+copy Copies a sequence of values from one container to another (or to a
+different location in the same container)
+swap Exchanges a value in one location with a value in another
+iter_swap Exchanges a sequence of values in one location with a sequence of
+values in another location
+fill Copies a value into a sequence of locations
+sort Sorts the values in a container according to a specified ordering
+merge Combines two sorted ranges of elements to make a larger sorted range
+accumulate Returns the sum of the elements in a given range
+for_each Executes a specified function for each element in the container
+
+iterators: generalisation pointers
+++increment
+*dereference
+There are three
+major classes of iterators: 
+forward,++
+ bidirectional,++,-- and 
+random access.jump,++,--;
+Iterator Can
+Iterator Type Read/Write Be Saved Direction Access
+Random access Read and write Yes Forward and back Random
+Bidirectional Read and write Yes Forward and back Linear
+Forward Read and write Yes Forward only Linear
+Output Write only No Forward only Linear
+Input Read only No Forward only Linear
+sort(arr, arr+n);//beg & end
+
+***********************************************************************************************************************************************************************

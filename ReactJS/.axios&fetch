@@ -1,0 +1,24 @@
+axios.post('/post', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
+  
+  
+function handleErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
+fetch("/get")
+    .then(handleErrors)
+    .then(response => console.log("ok") )
+    .catch(error => console.log(error) );  

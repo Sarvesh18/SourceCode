@@ -1,0 +1,54 @@
+BigInteger
+----------
+***********************************************************************************************************************************************************************
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class Classname {
+
+ public static void main(String[] args) {
+
+  BigInteger var, var1, var2, var3;
+ 
+  var = new BigInteger("18");
+
+  Scanner input = new Scanner(System.in); 
+  var1 = input.nextBigInteger();
+  var2 = input.nextBigInteger();
+
+  var3 = var1.add(var2);
+  var3 = var1.subtract(var2);
+  var3 = var1.multiply(var2);
+  var3 = var1.divide(var2);
+  var3 = var1.remainder(var2); //-100 % 3 is -1
+  var3 = var1.mod(var2); //-100 mod 3 is 2
+  var3 = var1.pow(exponent) //int exponent
+  var3 = var1.modPow(exponent, var2); //7^2 mod 20 is 9
+  
+  var3 = var1.abs();
+  var3 = var1.gcd(var2);
+  var3 = var1.nextProbablePrime();
+  var3 = var1.max(var2);
+  var3 = var1.min(var2);
+  
+  String s = var.toString();
+  int res = var1.compareTo(var2);
+  //res == 0 //Both values are equal
+  //res == 1 //First Value is greater
+  //res == 2 //Second value is greater
+  
+  String str = " "+var;
+  System.out.println( str ); 
+ 
+  for(BigInteger i = BigInteger.valueOf(1); i.compareTo(var) <= 0; i = i.add(BigInteger.ONE)) 
+  {
+    System.out.println( i );
+  }
+
+ }
+}
+*******************************************************************  
+for(BigInteger i = BigInteger.valueOf(1); i.compareTo(n) <= 0; i = i.add(BigInteger.ONE)) {
+      System.out.println("I'm so big now : " + bigInt);
+}
+***********************************************************************************************************************************************************************

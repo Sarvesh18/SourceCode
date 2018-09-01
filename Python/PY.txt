@@ -1,0 +1,107 @@
+Python
+------
+***********************************************************************************************************************************************************************
+#Python2
+
+Run
+python filename.py
+
+-line indentation
+ indentation. In Python, whitespace matters. A lot. 
+ Notice that I said indents must be four spaces
+#Comment
+raw_input("\n\nPress the enter key to exit.")
+****************************************************************
+#a^b 
+a = int(raw_input())
+b = int(raw_input())
+print a**b
+****************************************************************
+n = int(raw_input("Enter a Number :"))
+print "\n", n
+print n, "\n"
+****************************************************************
+var = 
+if var ==  :
+
+elif var ==  :
+
+else:
+****************************************************************
+while var == 1 :
+   print 
+else: 
+   print n, " "
+****************************************************************
+for i in range(0,n)
+   print 
+
+for letter in 'Python': 
+   print 'Current Letter :', letter
+
+fruits = ['banana', 'apple',  'mango']
+for fruit in fruits:      
+   print 'Current fruit :', fruit
+
+for index in range(len(fruits)):
+   print 'Current fruit :', fruits[index]
+
+*******************************************************************
+pass
+break
+continue
+
+Variables
+---------
+var = ""
+print var
+
+Data types
+----------
+Strings
+var = "" or ''
+
+Integers
+var = 18
+
+Floats
+var = 18.27
+
+Lists(any type data)
+var =[ ,  , ]
+var[0]
+
+Tuples(cannot be changed)
+var = ( , , )
+
+Dictionaries(pairs of keys & values)
+var = {'':'', '':''}
+var['']
+
+Control structures
+------------------
+if var > 18:
+	print
+else:
+    print
+	
+for i in var:
+    print letter
+
+Functions
+---------
+def func(x): 
+	return 18
+
+func(18)
+
+Standard library
+----------------
+import urllib2
+urllib2.urlopen("http://www.python.org/")
+
+from urllib2 import urlopen
+urlopen("http://www.python.org/")
+
+
+***********************************************************************************************************************************************************************

@@ -1,0 +1,67 @@
+Cpp
+---
+***********************************************************************************************************************************************************************
+    int arr[] = {15, 2, 4, 8, 9, 5, 10, 23};
+    int n = sizeof(arr)/sizeof(arr[0]);
+{{{{{
+
+#include <iostream>
+using namespace std;
+void main()
+{
+cout<<;
+cin>>;
+}
+
+****************************************************
+Stacks
+#include <stack>
+stack<T> s;
+Suppose that T is any type or class - 
+say an int, a float, a struct, or a class, then
+
+
+s.empty()
+s.size()
+s.push(t)
+s.pop()
+s.top()
+s.top() = expression //Change
+****************************************************
+
+
+using namespace std;
+vector<int> N;
+vector< vector<int> >
+v.push_back(i);
+ v.resize(25);
+
+vector<int> v2 = v1; 
+ vector<int> v3(v1); 
+
+
+
+Vector<ValueType> vec;
+Vector<ValueType> vec(n, value);
+
+vec.add(value);
+vec.clear();
+if (v.equals(v2))
+ValueType val = vec.get(index);
+vec.insert(0, value);
+if (vec.isEmpty())
+vec.mapAll(fn);
+vec.remove(index);
+vec.set(index, value);
+
+int nElems = vec.size();
+
+Vector<ValueType> sub = v.subList(start, length);
+string str = vec.toString();
+vec[index]
+v1 + v2
+
+v1 += v2;
+v1 += value;
+
+***********************************************************************************************************************************************************************

@@ -1,0 +1,161 @@
+Redux
+===== 
+
+3 Principles
+============
+->Single Source of Truth 
+store.getState()
+->State is read-only
+actions
+->Changes are made with pure functions
+reducers
+
+
+
+<Provider store>
+================
+->Redux store available to connect()
+
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import todoApp from './reducers'
+
+const store = createStore(todoApp)
+const store = createStore(todoApp,window.STATE_FROM_SERVER)
+​//store.dispatch(addTodo('action'))
+/*
+<script>
+window.__PRELOADED_STATE__=$JSON.stringify(store.getState()).replace(/</g,'\\u003c')
+</script>
+
+delete window.__PRELOADED_STATE__;
+*/
+​render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
+
+
+
+constants.js
+============
+export const = '';
+
+
+
+actions
+=======
+export const addTodo = text => ({
+    type:''
+    text
+})
+/*
+export const addTodo = text => {
+    const action = {
+        type:''
+        text
+    }
+    return action;
+}
+*/
+//this.props.fuction();
+this.props.dispatch(function());
+
+reducers
+========
+export deafult const todo = (state=[],action) => {
+    switch(action.type) {
+        case '': 
+            return [...state, {text:action.text}]
+        default :
+            return state;
+    }
+}
+//const = state.filter(x=>x.id!==id); 
+
+
+
+import {combineReducers} from 'redux';
+export default const todoApp = combineReducers({
+   todos,
+   visibleTodoFilter
+})
+
+
+
+connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
+=========================================================================
+->Connects React component to Redux store
+
+import { connect } from 'react-redux';
+export default connect()(TodoApp)
+export default connect(mapStateToProps or null or undefined, mapDispatchToProps or null)(TodoApp)
+
+
+
+[mapStateToProps(state, [ownProps]): stateProps] (Function)
+================================================
+->Subscribe to Redux store updates
+
+->argument Redux store state
+->return object
+
+function mapStateToProps(state) {
+  return { todos: state.todos }
+}
+
+
+
+[mapDispatchToProps(dispatch, [ownProps]): dispatchProps] (Object or Function)
+==============================================================================
+->bindActionCreators() 
+->dispatch(actionCreator, ownProps)
+
+->re-invoked whenever the connected component receives new props
+->default mapDispatchToProps implementation just injects dispatch
+
+import * or {} as actionCreators from './actionCreators'
+import { bindActionCreators } from 'redux' 
+function mapDispatchToProps(dispatch) {
+    //return { actions: bindActionCreators(actionCreators, dispatch) }
+    return bindActionCreators({ addTodo }, dispatch)
+    //dispatch(toggleTodo(id))
+}
+
+[mergeProps(stateProps, dispatchProps, ownProps): props] (Function)
+===================================================================
+->Object.assign({}, ownProps, stateProps, dispatchProps) default
+
+
+
+options
+=======
+->
+
+
+Asynchronous
+============
+import thunk from 'redux-thunk';
+
+import {createStore, applyMiddleware} from 'redux';
+
+const store = createStore(
+    reducer,
+    applyMiddleware(thunk)
+)
+//store.dispatch({})
+store.dispatch(function(dispatch) {
+    dispatch({})    
+})
+
+actions
+export function - () {
+    return (dispatch,getState) =>{
+        dispatch(func())
+    }
+}
+
+
+this.props.-

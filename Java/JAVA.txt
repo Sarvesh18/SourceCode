@@ -1,0 +1,171 @@
+JAVA
+----
+***********************************************************************************************************************************************************************
+********************************************************************************
+class ClassName {
+public static void main(String args[]) {
+ void functionName {
+  System.out.println("Demo");
+ }
+ ClassName object = new ClassName();
+ object.functionName();
+}
+********************************************************************************
+System.out.println("");
+System.out.print(""+VAR+"");
+
+CHOICE = (char)System.in.read();
+********************************************************************************
+//char='';
+//boolean=true;
+********************************************************************************
+import java.util.Scanner;
+
+Scanner obj = new Scanner(System.in);
+int = obj.nextInt();
+float = obj.nextFloat();
+double = obj.nextDouble();
+string = obj.nextLine();
+
+//char='';
+//boolean=true;
+********************************************************************************
+// Convert Strings to Primitive Numbers
+// valueOf that converts a string to an object of that type
+float a=(Float.valueOf(args[0])).floatValue();
+//Convert Number to String
+String s1 = "" + i;
+OR
+String s2 = String.valueOf(i);
+//Convert Primitive Type to String
+String s3 = Integer.toString(i); 
+String s4 = Double.toString(d);
+
+********************************************************************************
+//Double 
+//Range [0,1)
+
+import java.util.Random.nextInt()
+randomNumber = Min + (int)(Math.random() * ((Max+1) - Min); //Double & Range [0,1)
+OR
+import java.util.Random.nextInt()
+Random obj = new Random();
+randomNumber = Min + obj.nextInt((Max+1) - Min); //Double & Range [0,1)
+OR
+//Java 1.7 or later
+import java.util.concurrent.ThreadLocalRandom;
+ThreadLocalRandom.current().nextInt(min, max + 1); //Double & Range [0,1)
+********************************************************************************
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in); 
+        try {
+            int a = scan.nextInt();
+            int b = scan.nextInt(); 
+            int c=a/b;
+            System.out.println(c);
+        }
+        catch(ArithmeticException e) {
+            System.out.println(e);
+        }
+        catch(InputMismatchException e) {
+            // ensure that "java.util.InputMismatchException" is printed only.
+            System.out.println(e.getClass().toString().replaceFirst("class ", ""));
+        }
+        scan.close();
+    }
+}
+********************************************************************************
+#Java Varargs
+import java.io.*;
+import java.lang.reflect.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+class Add
+{
+    public void add(int ...arr){
+        int sum=0;
+        String s="";
+        for(int i=0;i<arr.length;i++){
+            sum+=arr[i];
+            s+=arr[i];
+            if(i<arr.length-1)
+                s+="+";
+        }
+        s+="="+sum;
+        System.out.println(s);
+    }
+public class Solution {
+    public static void main(String[] args) {
+       try{
+			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+			int n=Integer.parseInt(br.readLine());
+			Add ob=new Add();
+			ob.add(n1,n2);
+			ob.add(n1,n2,n3);
+			ob.add(n1,n2,n3,n4,n5);	
+			ob.add(n1,n2,n3,n4,n5,n6);
+			
+			Method[] methods=Add.class.getDeclaredMethods();
+			Set<String> set=new HashSet<>();
+			boolean overload=false;
+			for(int i=0;i<methods.length;i++)
+			{
+				if(set.contains(methods[i].getName()))
+				{
+					overload=true;
+					break;
+				}
+				set.add(methods[i].getName());
+				
+			}
+			if(overload)
+			{
+				throw new Exception("Overloading not allowed");
+			}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+}
+********************************************************************************
+public class TestThrow1{  
+   static void validate(int age){  
+     if(age<18)  
+      throw new ArithmeticException("not valid");  
+     else  
+      System.out.println("welcome to vote");  
+   }  
+   public static void main(String args[]){  
+      validate(13);  
+      System.out.println("rest of the code...");  
+  }  
+}
+********************************************************************************
+import java.util.*;  
+class TestCollection13{  
+ public static void main(String args[]){  
+   
+  HashMap<Integer,String> hm=new HashMap<Integer,String>();  
+  
+  hm.put(100,"Amit");  
+  hm.put(101,"Vijay");  
+  hm.put(102,"Rahul");  
+  
+  for(Map.Entry m:hm.entrySet()){  
+   System.out.println(m.getKey()+" "+m.getValue());  
+  }  
+ }  
+}
+
+  while ( in .hasNextInt()) {
+   int n = in .nextInt();
+   int p = in .nextInt();
+********************************************************************************
+***********************************************************************************************************************************************************************
