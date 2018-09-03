@@ -1,5 +1,0 @@
-Web Application Framework
-
-Mongoose
-
-curl -X POST "http://localhost:8090/post"
